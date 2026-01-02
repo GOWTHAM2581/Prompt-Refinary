@@ -43,7 +43,7 @@ export default function Sidebar({ userId, currentChatId, onSelectChat, onNewChat
                             className="flex items-center gap-2"
                         >
                             <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center shadow-lg shadow-indigo-500/20">
-                                <Settings2 className="text-white" size={18} />
+                                <span className="font-black text-white italic">R</span>
                             </div>
                             <h1 className="font-bold text-lg text-zinc-100 tracking-tight">Refinery</h1>
                         </motion.div>
