@@ -16,6 +16,7 @@ export default function ChatInterface({ userId, chatId, onChatCreated }) {
 
     useEffect(() => {
         // Only load from API if switching chats (different chatId)
+        // Avoid loading if we just created this chat locally
         if (chatId && chatId !== lastChatId.current) {
             loadMessages(chatId);
             lastChatId.current = chatId;
@@ -69,6 +70,7 @@ export default function ChatInterface({ userId, chatId, onChatCreated }) {
                 if (response.error) throw new Error(response.error);
 
                 onChatCreated(response.chat_id);
+                lastChatId.current = response.chat_id;
                 const assistantMsg = { role: 'assistant', content: response.optimized_prompt, id: 'temp-assistant-' + Date.now() };
                 setMessages([tempUserMsg, assistantMsg]);
             } else {

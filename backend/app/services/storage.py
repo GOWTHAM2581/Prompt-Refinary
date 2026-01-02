@@ -16,11 +16,10 @@ async def create_chat(user_id: str) -> str:
     
     chat_id = str(uuid.uuid4())
     try:
-        # We don't have a title column yet, so we just create the chat
-        db.table("chats").insert({"id": chat_id, "user_id": user_id}).execute()
+        db.table("chats").insert({"id": chat_id, "user_id": str(user_id)}).execute()
         return chat_id
     except Exception as e:
-        print(f"DB Error: {e}")
+        print(f"CRITICAL DB ERROR (create_chat): {e}")
         return chat_id
 
 async def add_message(chat_id: str, role: str, content: str):
