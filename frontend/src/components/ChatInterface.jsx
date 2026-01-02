@@ -102,7 +102,7 @@ export default function ChatInterface({ userId, chatId, onChatCreated }) {
                         <motion.div
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
-                            className="flex flex-col items-center justify-center min-h-[60vh] text-center space-y-8"
+                            className="flex flex-col items-center justify-center min-h-[70vh] text-center space-y-8 pt-20"
                         >
                             <div className="relative">
                                 <div className="absolute inset-0 bg-indigo-500 blur-2xl opacity-20 animate-pulse" />
