@@ -96,7 +96,7 @@ export default function ChatInterface({ userId, chatId, onChatCreated }) {
             <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-purple-600/10 blur-[120px] rounded-full pointer-events-none" />
 
             {/* Messages Area */}
-            <div className="flex-1 overflow-y-auto px-4 py-10 md:px-12 space-y-10 scrollbar-thin scrollbar-thumb-zinc-800 scrollbar-track-transparent">
+            <div className="flex-1 overflow-y-auto px-4 pt-24 pb-10 md:px-12 space-y-10 scrollbar-thin scrollbar-thumb-zinc-800 scrollbar-track-transparent">
                 <AnimatePresence>
                     {messages.length === 0 && !isLoadingHistory && !isProcessing && !chatId && (
                         <motion.div
